@@ -103,9 +103,9 @@ public class Arrays_methods {
 		//11.Write a method that takes two arrays of double and returns true if the average of the elements
 		//in the first array is greater than the average of the elements in the second array
 		
-		double[] arrayTwo = null;
-		double[] arrayOne = null;
-		System.out.println(averageElements1(arrayTwo )< averageElements(arrayOne));
+		double[] numE = {2,4,6,8};
+		double[] numO = {9,11,13};
+		System.out.println(averageElements(numE,numO));
 		
 				
 		//12.Write a method called willBuyDrink that takes a boolean isHotOutside,
@@ -115,7 +115,19 @@ public class Arrays_methods {
 		//13.Create a method of your own that solves a problem. In comments, write what the method does
 		//and why you created it.
 		
-				
+		double[] sevenDays = {74.5,68.5,89.3,92.2,101.5,90.6};
+		double[] waterUsage = {5.1, 7.2,15.3,20.4,3.0};
+		System.out.println(availableWater(sevenDays,waterUsage));
+		
+		//during the early spring and dependent upon the crop type water is critical for a substantial yield.
+		//when the temperature is cooler the crop does not require as much water and conservation is key when 
+		//irrigating.   if water usage is less in gallons to a less demanding crop then water can be allocated 
+		//to another high demanding crop that does require many gallons of water.
+		//over time available Water can be adjusted based off the condition  of weather type.
+		//exact measure of water and temperature would require a precise variable known as double instead of an
+		//integer. integers round a number to the next whole number and conservation of water in this case would
+		// be in percentage of a whole number and two decimal places such as .25, .5, and/or .75 as an example.
+		
 		boolean isHotOutside = true;
 		double moneyInPocket = 20.00; //if 10.00 on console will be false.
 		System.out.println(willBuyDrink (isHotOutside, moneyInPocket));
@@ -169,41 +181,99 @@ public class Arrays_methods {
 
 	//11. method
 		
-		static int[] numE = {2,4,6,8};
-		static int[] numO = {9,11,13};
+//		static int[] numE = {2,4,6,8};
+//		static int[] numO = {9,11,13};
+//				
+//		public static double averageElements (double [] arrayOne) {
+//			double sum = 0;
+//			for (double array1 : numE) {
+//				sum +=array1; 
+//			}
+//			return sum / numE.length;
+//			
+//		}
+//			
+//			public static double averageElements1 (double [] arrayTwo) {
+//				double sum1 = 0;
+//				for (double array2 : numO) {
+//					sum1 +=array2; 
+//				}
+//				return sum1 / numO.length;
+//				
+//				}
 				
-		public static double averageElements (double [] arrayOne) {
-			double sum = 0;
-			for (double array1 : numE) {
-				sum +=array1; 
+		
+		
+		public static boolean averageElements (double [] arrayOne, double [] arrayTwo) {
+			double sum = 0; 
+			double sum1 = 0;
+			for (double num : arrayOne) {
+				sum+= num;
+				System.out.println(num);
+				
 			}
-			return sum / numE.length;
 			
-		}
-			
-			public static double averageElements1 (double [] arrayTwo) {
-				double sum1 = 0;
-				for (double array2 : numO) {
-					sum1 +=array2; 
-				}
-				return sum1 / numO.length;
+			for (double num : arrayTwo) {
+				sum1 += num ;
+				System.out.println(num);
 				
-				}
-					
+			}
+			
+			//double totalSum = sum + sum1;
+			//double totalLength = arrayOne.length + arrayTwo.length;
+			double average = sum/arrayOne.length;
+			double average2 = sum1/arrayTwo.length;
+			
+			return (average > average2);
+		}
+		
 	
 		public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
 			if(isHotOutside == true && moneyInPocket > 10.50) {
 				return true;
 			} else { 
-				return false;
-												
+				return false; 
+				}											
+			}
+		
+			
+	//13. method
+			
+			public static double availableWater(double [] sevenDays, double [] waterUsage) {
+				double sum = 0;
+				double sum1 = 0; {
+				for (double num : sevenDays) {
+					sum += num;
+					}
+				for (double num : waterUsage) {
+					sum1 += num;
+					
+				}
+				double totalSum = sum + sum1;
+				double totalLength = sevenDays.length + waterUsage.length;
+				double average =totalSum/totalLength;
+				return average; 
+								
+					//if conditional will work!
 			}
 			
+//			if dayIsBelow50(int sevenDays > 50);
+//			return true;
+//			} else {
+//				return (do not water);
+				
 			}
+					
+		}
+			
+			
+			
+			
+			
 
 //HHHH! i think i did it!	
 				
-			}
+			
 		
 	
 
